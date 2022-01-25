@@ -1,0 +1,64 @@
+{% spaceless %}
+    {% load static %}
+    <!DOCTYPE HTML>
+    <html lang="en">
+        <head>
+            <meta charset="utf-8">
+            <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+            <meta name="author" content="Jibon Ahmed">
+            <title>Student Grade System</title>
+            <link rel="shortcut icon" type="image/x-icon" href="{% static 'images/favicon.ico' %}">
+            <script src="{% static 'js/jquery-2.0.0.min.js' %}" type="text/javascript"></script>
+            <script src="{% static 'js/bootstrap.bundle.min.js' %}" type="text/javascript"></script>
+            <link href="{% static 'css/bootstrap.css' %}" rel="stylesheet" type="text/css"/>
+            <link href="{% static 'fonts/fontawesome/css/fontawesome-all.min.css' %}" type="text/css" rel="stylesheet">
+            <link href="{% static 'css/ui.css' %}" rel="stylesheet" type="text/css"/>
+            <link href="{% static 'css/responsive.css' %}" rel="stylesheet" media="only screen and (max-width: 1200px)" />
+        </head>
+    <body>
+
+        <section class="section-intro bg-secondary">
+            <nav class="navbar navbar-expand-md navbar-dark">
+                <div class="container">
+                    <a class="navbar-brand" href="#">
+                        <i class="fa fa-home"></i> Student Grade System
+                    </a>
+                    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar1" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <div class="collapse navbar-collapse" id="navbar1">
+                        <ul class="navbar-nav ml-auto">
+                            <li class="nav-item active">
+                                <a class="nav-link" href="{% url 'home' %}">Home</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="{% url 'contact' %}">Contact</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="{% url 'login' %}">Login</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </nav>
+        </section>
+
+        {% block content %}
+
+
+        {% endblock content %}
+
+        <footer class="section-footer bg-dark white">
+            <div class="container">
+                <div class="row">
+                    <div class="col pt-3">
+                        <p class="text-center">Copyright All Right Reserved © Student Grade System<br>
+                            <small class="text-white mt-2" style="font-size: 14px">Design & Develop by Student Grade System</small>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </footer>
+    </body>
+    </html>
+{% endspaceless %}

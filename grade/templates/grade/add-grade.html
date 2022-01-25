@@ -1,0 +1,80 @@
+{% extends 'dashboard/base_dashboard.html' %}
+{% load crispy_forms_filters %}
+{% load static %}
+{% load crispy_forms_tags %}
+{% block title %} Add Grade{% endblock %}
+
+{% block content %}
+
+    <section id="add-grade">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-sm-12 col-md-12 col-lg-12 col-xl-12 mb-2">
+                    <h3 class="text-center">
+                        <a href="{% url 'add-grade' %}">Add Grade</a>
+                        <span class="text-danger mx-1">||</span>
+                        <a href="{% url 'grade-list' %}">Back to Grade</a>
+                    </h3>
+                </div>
+            </div>
+            <div class="row justify-content-center">
+                <div class="col-sm-12 col-md-12 col-lg-12 col-xl-12">
+                    <div class="card">
+                        <h4 class="card-header text-center" style="font-style: italic">Add Grade Form</h4>
+                        <div class="card-body">
+                            <form action="{% url 'add-grade' %}" method="POST"  enctype="multipart/form-data">
+                               {% csrf_token %}
+                                <div class="row">
+                                    <div class="col-xs-12 col-sm-12 col-md-4">
+                                        {{ form.name|as_crispy_field }}
+                                    </div>
+                                    <div class="col-xs-12 col-sm-12 col-md-4">
+                                        {{ form.school_id|as_crispy_field }}
+                                    </div>
+                                    <div class="col-xs-12 col-sm-12 col-md-4">
+                                        {{ form.email|as_crispy_field }}
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-xs-12 col-sm-12 col-md-4">
+                                        {{ form.course_name|as_crispy_field }}
+                                    </div>
+                                    <div class="col-xs-12 col-sm-12 col-md-4">
+                                        {{ form.teacher_name|as_crispy_field }}
+                                    </div>
+                                    <div class="col-xs-12 col-sm-12 col-md-4">
+                                        {{ form.completed|as_crispy_field }}
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-xs-12 col-sm-12 col-md-4">
+                                        {{ form.marks|as_crispy_field }}
+                                    </div>
+                                    <div class="col-xs-12 col-sm-12 col-md-4">
+                                        {{ form.letter_grade|as_crispy_field }}
+                                    </div>
+                                    <div class="col-xs-12 col-sm-12 col-md-4">
+                                        {{ form.file|as_crispy_field }}
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-xs-12 col-sm-12 col-md-6">
+                                        {{ form.create_by|as_crispy_field }}
+                                    </div>
+                                    <div class="col-xs-12 col-sm-12 col-md-6">
+                                        {{ form.updated_by|as_crispy_field }}
+                                    </div>
+                                </div>
+                                <button class="btn btn-info btn-block">Submit</button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+{% endblock content %}
+
+
+
