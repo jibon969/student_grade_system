@@ -14,7 +14,15 @@ from .views import (
     update_status,
     delete_status,
     download_status_csv,
+
+    # Student-information
+    student_information_list,
+    add_student_information,
+    update_student_information,
+    delete_student_information,
+    download_student_information_csv
 )
+
 urlpatterns = [
     path('', home, name="home"),
 
@@ -31,4 +39,12 @@ urlpatterns = [
     path('update-status/<int:id>/', update_status, name="update-status"),
     path('delete-status/<int:id>/', delete_status, name="delete-status"),
     path('download-status-csv/', download_status_csv, name="download-status-csv"),
+
+    # Student-information
+    path('student-information/', student_information_list, name="student-information"),
+    path('add-student-information/', add_student_information, name="add-student-information"),
+    path('update-student-information/<int:id>/', update_student_information, name="update-student-information"),
+    path('delete-student-information/<int:id>/', delete_student_information, name="delete-student-information"),
+    path('download-student-information-csv/', download_student_information_csv, name="download-student-information-csv"),
+
 ]
