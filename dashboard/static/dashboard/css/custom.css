@@ -1,0 +1,73 @@
+
+/*.login-dashboard{*/
+    /*background: rgb(2,0,36);*/
+    /*background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(9,9,121,1) 35%, rgba(0,212,255,1) 100%);*/
+/*}*/
+
+
+.login-dashboard{
+    background: #F3F3F3;
+}
+
+.top-navbar{
+    background: #417690 !important;
+}
+
+
+.nav-link a{
+   color: white;
+}
+
+.nav-link:hover{
+    background: #417690 !important;
+    border-radius: 4px;
+}
+
+.custom-button{
+    padding: 14px !important;
+    background: #343A40 !important;
+    border-radius: 5px !important;
+    font-size: 20px !important;
+    text-align: center;
+}
+.custom-button a{
+    text-decoration: none;
+    color: white;
+}
+
+
+/* Table row size */
+.table_column_size{
+    display: block;
+    word-break: break-all;
+    white-space: normal;
+    overflow: hidden;
+    width:260px;
+    border: none;
+}
+
+
+/* Table Size Fixed */
+.table_size{
+    height: 380px !important;
+    overflow-y: auto !important;
+}
+
+.table_header{
+    background: #485769 !important;
+    position: -webkit-sticky !important;
+    position: sticky !important;
+    top: 0 !important;
+    z-index: 1020 !important;
+    overflow: hidden;
+    color: white;
+}
+.table_td_width{
+    width: 300px !important;
+    word-break: break-all !important;
+    white-space: normal !important;
+    overflow: hidden !important;
+    text-align: left !important;
+    display: block !important;
+}
+/* End Table Size Fixed */
