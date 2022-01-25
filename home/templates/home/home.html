@@ -1,0 +1,79 @@
+{% extends 'base.html' %}
+
+{% block title %} Home || {{ block.super }} {% endblock title %}
+
+{% block content %}
+
+    <section class="section-intro bg-secondary">
+        <div class="container">
+            <main>
+                <div class="row text-light text-center">
+                    <div class="col-md-8 col-sm-12 mx-auto">
+                        <h1 class="display-4">Student Grade System</h1>
+                        <p class="lead mb-5">Cempus amet donec, egestas pulvinar amet semper accusamus commod</p>
+                    </div>
+                </div>
+                <div class="row mb-5">
+                    <div class="mx-auto col-md-9">
+                        <div class="card">
+                            <div class="card-body">
+                                <form action="{% url 'home' %}" method="get">
+                                    <div class="form-row">
+                                        <div class="col-md-9 col-sm-12">
+                                            <input name="q" class="form-control mb-2 h-100 p-3"  placeholder="Search here .." type="text">
+                                        </div>
+                                        <div class="col-md-3 col-sm-12">
+                                            <button class="btn btn-warning btn-block h-100" type="submit">Search</button>
+                                        </div>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <br>
+            </main>
+        </div>
+    </section>
+
+    <section class="section-content">
+        <div class="container">
+             <header class="section-heading">
+                 <h2 class="text-center">Search Your Result</h2>
+                 <hr>
+             </header>
+            <div class="row">
+                <div class="col-md-6 mb-3">
+                    <article>
+                        <div class="card">
+                            <div class="card-body">
+                                <h2>Jibon Ahmed</h2>
+                                <h3>Email : Jibon.py@gmail.com</h3>
+                                <h2>Jibon Ahmed</h2>
+                                <h3>Email : Jibon.py@gmail.com</h3>
+                                <h2>Jibon Ahmed</h2>
+                                <h3>Email : Jibon.py@gmail.com</h3>
+                            </div>
+                        </div>
+                    </article>
+                </div>
+                <div class="col-md-6 mb-3">
+                    <article>
+                        <div class="card">
+                            <div class="card-body">
+                                <h2>Jibon Ahmed</h2>
+                                <h3>Email : Jibon.py@gmail.com</h3>
+                                <h2>Jibon Ahmed</h2>
+                                <h3>Email : Jibon.py@gmail.com</h3>
+                                <h2>Jibon Ahmed</h2>
+                                <h3>Email : Jibon.py@gmail.com</h3>
+                            </div>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+{% endblock content %}

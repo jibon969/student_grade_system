@@ -11,6 +11,7 @@ https://docs.djangoproject.com/en/3.0/ref/settings/
 """
 
 import os
+from django.contrib.messages import constants as messages
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -31,9 +32,11 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = [
+    'home.apps.HomeConfig',
     'accounts.apps.AccountsConfig',
     'dashboard.apps.DashboardConfig',
     'contactUs.apps.ContactusConfig',
+    'grade.apps.GradeConfig',
     # Default App
     'django.contrib.admin',
     'django.contrib.auth',
@@ -153,3 +156,12 @@ MEDIA_ROOT = os.path.join(os.path.dirname(BASE_DIR), "static_cdn", "media")
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
+
+# Add Message Framework
+MESSAGE_TAGS = {
+    messages.DEBUG: 'alert-info',
+    messages.INFO: 'alert-info',
+    messages.SUCCESS: 'alert-success',
+    messages.WARNING: 'alert-warning',
+    messages.ERROR: 'alert-danger',
+}
