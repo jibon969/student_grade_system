@@ -33,6 +33,8 @@ ALLOWED_HOSTS = []
 INSTALLED_APPS = [
     'accounts.apps.AccountsConfig',
     'dashboard.apps.DashboardConfig',
+    'contactUs.apps.ContactusConfig',
+    # Default App
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
