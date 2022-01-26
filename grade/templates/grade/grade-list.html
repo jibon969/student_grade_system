@@ -63,6 +63,7 @@
                                         <th scope="col" class="sticky-top bg-dark">Create By</th>
                                         <th scope="col" class="sticky-top bg-dark">Updated By</th>
                                         <th scope="col" class="sticky-top bg-dark">Timestamp</th>
+                                        <th scope="col" class="sticky-top bg-dark">Update Time</th>
                                     </tr>
                                 </thead>
                                 <tbody>
@@ -107,6 +108,7 @@
                                         <td>{{ grade.create_by }}</td>
                                         <td>{{ grade.updated_by }}</td>
                                         <td>{{ grade.timestamp }}</td>
+                                        <td>{{ grade.update }}</td>
                                      </tr>
                                      {% empty %}
                                      <div class="alert alert-info alert-dismissible fade show text-center p-3 mb-3" role="alert">
