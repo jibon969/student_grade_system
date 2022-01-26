@@ -28,7 +28,13 @@ def home(request):
             Q(first_name__icontains=query) |
             Q(last_name__icontains=query) |
             Q(middle_name__icontains=query) |
-            Q(former_surname__icontains=query)
+            Q(former_surname__icontains=query) |
+            Q(program__title__icontains=query) |
+            Q(school_id_number__icontains=query) |
+            Q(phone_number_cell__icontains=query) |
+            Q(phone_number_home__icontains=query) |
+            Q(legal_status__icontains=query) |
+            Q(aboriginal_status__icontains=query)
         ).distinct()
     paginator = Paginator(posts_list, 5)  # 5 posts per page
     page = request.GET.get('page')
