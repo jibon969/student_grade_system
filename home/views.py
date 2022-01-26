@@ -34,19 +34,12 @@ def home(request):
             Q(phone_number_cell__icontains=query) |
             Q(phone_number_home__icontains=query) |
             Q(legal_status__icontains=query) |
-            Q(aboriginal_status__icontains=query)
+            Q(aboriginal_status__icontains=query) |
+            Q(email_address__icontains=query) |
+            Q(email_address__startswith=query)
         ).distinct()
-    paginator = Paginator(posts_list, 5)  # 5 posts per page
-    page = request.GET.get('page')
-    try:
-        posts = paginator.page(page)
-    except PageNotAnInteger:
-        posts = paginator.page(1)
-    except EmptyPage:
-        posts = paginator.page(paginator.num_pages)
     context = {
-        'posts': posts,
-        'page': page,
+        'posts': posts_list,
         'search': search,
     }
     return render(request, "home/home.html", context)

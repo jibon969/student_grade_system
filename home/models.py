@@ -20,13 +20,13 @@ class Status(models.Model):
 
 
 class StudentInformation(models.Model):
-    status = models.ForeignKey(Status, on_delete=models.CASCADE)
+    status = models.ForeignKey(Status, on_delete=models.CASCADE, blank=True, null=True)
     program = models.ForeignKey(Program, on_delete=models.CASCADE)
     first_name = models.CharField(max_length=150)
-    middle_name = models.CharField(max_length=150)
+    middle_name = models.CharField(max_length=150, blank=True, null=True)
     last_name = models.CharField(max_length=150)
-    former_surname = models.CharField(max_length=120)
-    also_known_as_given_name = models.CharField(max_length=120)
+    former_surname = models.CharField(max_length=120, blank=True, null=True)
+    also_known_as_given_name = models.CharField(max_length=120, blank=True, null=True)
     date_of_birth = models.DateField(auto_now_add=False)
     GENDER = [
         ('M', 'Male'),
@@ -35,20 +35,20 @@ class StudentInformation(models.Model):
     ]
     gender = models.CharField(max_length=1, choices=GENDER)
     school_id_number = models.CharField(max_length=150)
-    phone_number_home = models.CharField(max_length=14)
-    phone_number_cell = models.CharField(max_length=14)
+    phone_number_home = models.CharField(max_length=14, blank=True, null=True)
+    phone_number_cell = models.CharField(max_length=14, blank=True, null=True)
     email_address = models.EmailField(max_length=150)
-    mailing_address = models.EmailField(max_length=150)
-    city_province = models.CharField(max_length=150)
-    postal_code = models.CharField(max_length=150)
-    asn = models.CharField(max_length=150)
+    mailing_address = models.EmailField(max_length=150, blank=True, null=True)
+    city_province = models.CharField(max_length=150, blank=True, null=True)
+    postal_code = models.CharField(max_length=150, blank=True, null=True)
+    asn = models.CharField(max_length=150, blank=True, null=True)
     AboriginalStatus = [
         ('Status Indian/First Nations', 'Status Indian/First Nations'),
         ('Non-Status Indian/First Nations', 'Non-Status Indian/First Nations'),
         ('Metis', 'Metis'),
         ('Inuit', 'Inuit')
     ]
-    aboriginal_status = models.CharField(choices=AboriginalStatus, max_length=100)
+    aboriginal_status = models.CharField(choices=AboriginalStatus, max_length=100, blank=True, null=True)
     LegalStatus = [
         ('Canadian', 'Canadian'),
         ('Permanent Resident', 'Permanent Resident'),
@@ -59,11 +59,11 @@ class StudentInformation(models.Model):
         ('Not Reported/Unknown', 'Not Reported/Unknown')
     ]
     legal_status = models.CharField(choices=LegalStatus, max_length=100, blank=True, null=True)
-    enrolment_start_date = models.DateField(auto_now_add=False)
-    enrolment_end_date = models.DateField(auto_now_add=False)
-    enrolment_actual_end = models.DateField(auto_now_add=False)
-    enrolment_grad_code = models.CharField(max_length=120)
-    enrolment_jp_code = models.CharField(max_length=120)
+    enrolment_start_date = models.DateField(auto_now_add=False, blank=True, null=True)
+    enrolment_end_date = models.DateField(auto_now_add=False, blank=True, null=True)
+    enrolment_actual_end = models.DateField(auto_now_add=False, blank=True, null=True)
+    enrolment_grad_code = models.CharField(max_length=120, blank=True, null=True)
+    enrolment_jp_code = models.CharField(max_length=120, blank=True, null=True)
     enrolment_employer_name = models.TextField(blank=True, null=True)
     enrolment_employer_contact = models.TextField(blank=True, null=True)
     enrolment_notes = models.TextField(blank=True, null=True)
