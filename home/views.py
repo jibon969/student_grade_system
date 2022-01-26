@@ -19,7 +19,31 @@ from .forms import (
 
 
 def home(request):
-    return render(request, "home/home.html")
+    posts_list = StudentInformation.objects.all()
+    search = request.GET.get('q')
+    if search:
+        # Using strip method to remove extra white space
+        query = search.strip()
+        posts_list = StudentInformation.objects.filter(
+            Q(first_name__icontains=query) |
+            Q(last_name__icontains=query) |
+            Q(middle_name__icontains=query) |
+            Q(former_surname__icontains=query)
+        ).distinct()
+    paginator = Paginator(posts_list, 5)  # 5 posts per page
+    page = request.GET.get('page')
+    try:
+        posts = paginator.page(page)
+    except PageNotAnInteger:
+        posts = paginator.page(1)
+    except EmptyPage:
+        posts = paginator.page(paginator.num_pages)
+    context = {
+        'posts': posts,
+        'page': page,
+        'search': search,
+    }
+    return render(request, "home/home.html", context)
 
 
 """---------------------------------------------
@@ -269,7 +293,6 @@ def student_information_list(request):
         'posts': posts,
         'page': page
     }
-    print("query :", query)
     return render(request, "home/student-information/student-information-list.html", context)
 
 
