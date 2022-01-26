@@ -48,12 +48,28 @@
                         <div class="col-md-8">
                             <div class="box">
                                 <dl class="dlist-align">
-                                    <dt>Name: </dt>
-                                    <dd> {{ p.first_name }}  {{ p.last_name }}</dd>
+                                    <dt>Name : </dt>
+                                    <dd> {{ p.first_name }} {{ p.middle_name }}  {{ p.last_name }}</dd>
                                 </dl>
                                 <dl class="dlist-align">
-                                  <dt>E-mail: </dt>
+                                  <dt>E-mail : </dt>
                                   <dd>{{ p.email_address }}</dd>
+                                </dl>
+                                <dl class="dlist-align">
+                                  <dt>Phone : </dt>
+                                  <dd>{{ p.phone_number_home }}</dd>
+                                </dl>
+                                <dl class="dlist-align">
+                                  <dt>Cell Phone : </dt>
+                                  <dd>{{ p.phone_number_home }}</dd>
+                                </dl>
+                                <dl class="dlist-align">
+                                  <dt>School ID : </dt>
+                                  <dd>{{ p.school_id_number }}</dd>
+                                </dl>
+                                <dl class="dlist-align">
+                                  <dt>Program : </dt>
+                                  <dd>{{ p.program.title }}</dd>
                                 </dl>
                             </div>
                         </div>
