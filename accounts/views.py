@@ -37,7 +37,7 @@ def login_view(request):
                 if user.is_active:
                     login(request, user)
                     messages.info(request, f"You are now logged in as {email}")
-                if request.user.is_superuser:
+                if request.user.is_superuser or request.user.is_staff:
                     return redirect('dashboard')
                 else:
                     return redirect('home')

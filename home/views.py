@@ -317,7 +317,7 @@ def add_student_information(request):
 @minified_response
 def update_student_information(request, id):
     page = request.GET.get('page')
-    obj = get_object_or_404(Program, pk=id)
+    obj = get_object_or_404(StudentInformation, pk=id)
     form = StudentInformationModelForm(request.POST or None, request.FILES or None, instance=obj)
     if form.is_valid():
         form.save()
