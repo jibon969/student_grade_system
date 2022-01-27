@@ -45,7 +45,7 @@
                 </header>
                 <div class="row justify-content-center">
                     {% for p in posts %}
-                        <div class="col-md-8">
+                        <div class="col-sm-12 col-md-8 col-lg-8 col-lg-8 col-xl-8 mb-3">
                             <div class="box">
                                 <dl class="dlist-align">
                                     <dt>Name : </dt>
@@ -57,10 +57,6 @@
                                 </dl>
                                 <dl class="dlist-align">
                                   <dt>Phone : </dt>
-                                  <dd>{{ p.phone_number_home }}</dd>
-                                </dl>
-                                <dl class="dlist-align">
-                                  <dt>Cell Phone : </dt>
                                   <dd>{{ p.phone_number_home }}</dd>
                                 </dl>
                                 <dl class="dlist-align">
